@@ -1,0 +1,114 @@
+<style>
+    #bar-respiration {
+        width: 10%;
+        Height: 33%;
+        border: 1px solid black;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    #bar-background {
+        color: #FFFFFF;
+        text-align: center;
+        font-family: arial;
+        padding-top: 5px;
+    }
+    
+    #bar-background.filling {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        -webkit-animation: inspirer 5s;
+        /* Safari 4.0 - 8.0 */
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-timing-function: linear;
+        /* Safari 4.0 - 8.0 */
+        animation: inspirer 5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+    
+    @-webkit-keyframes inspirer {
+        from {
+            height: 0%;
+        }
+        to {
+            height: 100%;
+            background-color: green;
+        }
+    }
+    
+    @keyframes inspirer {
+        from {
+            height: 0%;
+        }
+        to {
+            height: 100%;
+            background-color: green;
+        }
+    }
+    
+    #bar-background.emptying {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        -webkit-animation: expirer 5s;
+        /* Safari 4.0 - 8.0 */
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-timing-function: linear;
+        /* Safari 4.0 - 8.0 */
+        animation: expirer 5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+    
+    @-webkit-keyframes expirer {
+        from {
+            height: 100%;
+        }
+        to {
+            height: 0%;
+            background-color: blue;
+        }
+    }
+    
+    @keyframes expirer {
+        from {
+            height: 100%;
+            background-color: blue;
+        }
+        to {
+            height: 0%;
+        }
+    }
+</style>
+
+<script>
+    function expiration() {
+        document.getElementById("bar-background").classList.add('emptying');
+        document.getElementById("bar-background").classList.remove('filling');
+        document.getElementById("bar-background").textContent = "EXPIRER";
+        setTimeout(function() {
+            inspiration();
+        }, 5000);
+    }
+
+    function inspiration() {
+        document.getElementById("bar-background").classList.add('filling');
+        document.getElementById("bar-background").classList.remove('emptying');
+        document.getElementById("bar-background").textContent = "INSPIRER";
+        setTimeout(function() {
+            expiration();
+        }, 5000);
+    }
+    setTimeout(function() {
+        expiration();
+    }, 5000);
+</script>
+
+<html>
+<div id="bar-respiration">
+    <div id="bar-background" class="filling">INSPIRER</div>
+</div>
+
+</html>
