@@ -5,8 +5,9 @@
     <meta name="author" content="Stéphane Beaudet">
 </head>
 
-</style>
+<title>C&oelig;ur Calme</title>
 
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="style.css">
 
 <script>
@@ -27,14 +28,46 @@
             expiration();
         }, 5000);
     }
+
+    function startTimer(duration) {
+        var timer = duration,
+            minutes, seconds;
+        setInterval(function() {
+            display = document.getElementById("timer");
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = minutes + ":" + seconds;
+
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);
+    }
+    startTimer(299);
+
     setTimeout(function() {
         expiration();
     }, 5000);
 </script>
 
 <body>
+    <div id="titre">
+        C&oelig;ur Calme
+    </div>
+    <div id="timer">05:00</div>
     <div id="bar-respiration">
         <div id="bar-background" class="filling">INSPIRER</div>
+    </div>
+    <div id="explication">
+        Un petit logiciel pour faire de la <a href="https://fr.wikipedia.org/wiki/Cohérence_cardiaque">cohérence cardiaque</a>. Il est recommandé d'effectuer cet exercice durant 5 minutes afin de réduire l'anxiété.
+    </div>
+
+    <div id="footer">fait par &copy;
+        <a href="mailto:stephaneblitz@gmail.com">Stéphane Beaudet</a>
     </div>
 
 </body>

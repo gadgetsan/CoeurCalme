@@ -1,8 +1,54 @@
+body {
+    font-family: Roboto, Arial;
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#timer {
+    color: #CCCCCC;
+    text-align: center;
+    font-size: 24px;
+}
+
+#titre {
+    color: #FFFFFF;
+    padding-top: 200px;
+    text-align: center;
+    font-size: 50px;
+}
+
+#explication {
+    color: #CCCCCC;
+    font-side: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+#explication a {
+    color: #FFFFFF;
+}
+
+#footer {
+    font-size: 10px;
+    position: absolute;
+    text-align: right;
+    bottom: 0px;
+    right: 0px;
+    color: #CCCCCC;
+    padding: 5px;
+}
+
+#footer a {
+    color: #FFFFFF;
+}
+
 #bar-respiration {
     width: 10%;
     Height: 33%;
     min-width: 200px;
-    border: 1px solid black;
+    border: 1px solid #CCCCCC;
     text-align: center;
     margin: 0 auto;
 }
@@ -34,7 +80,7 @@
     }
     to {
         height: 100%;
-        background-color: green;
+        background-color: #CCCCCC;
     }
 }
 
@@ -44,7 +90,7 @@
     }
     to {
         height: 100%;
-        background-color: green;
+        background-color: #CCCCCC;
     }
 }
 
@@ -68,14 +114,14 @@
     }
     to {
         height: 0%;
-        background-color: blue;
+        background-color: #CCCCCC;
     }
 }
 
 @keyframes expirer {
     from {
         height: 100%;
-        background-color: blue;
+        background-color: #CCCCCC;
     }
     to {
         height: 0%;
