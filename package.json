@@ -1,7 +1,7 @@
 {
   "name": "Coeur Calme",
   "version": "1.0.0",
-  "Description": "Un logiciel pour faire de la cohérence cardiaque"
+  "Description": "Un logiciel pour faire de la cohérence cardiaque",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
